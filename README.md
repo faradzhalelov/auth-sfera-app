@@ -9,7 +9,7 @@ Auth Application
 - select theme
 
 ## How it works:
-[video](https://drive.google.com/file/d/1Oqd5dNDcHWFnsOBi2kmJGHctp3lSrkB8/view?usp=sharing)/
+[video](https://drive.google.com/file/d/1Oqd5dNDcHWFnsOBi2kmJGHctp3lSrkB8/view?usp=sharing) /n
 [setup](https://drive.google.com/file/d/1JFJj1jizEW2SRKQ2nX0bgCJ35KHayd04/view?usp=sharing)
 
 ## Run:
