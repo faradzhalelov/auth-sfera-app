@@ -69,7 +69,6 @@ class _AppState extends State<App> {
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             supportedLocales: AppLocalizations.supportedLocales,
             onGenerateRoute: CustomRouter.generatedRoute,
-            initialRoute: homeRoute,
             home: FutureBuilder(
               future: getUserData(),
               builder: (context, snapshot) {
