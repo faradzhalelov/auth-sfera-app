@@ -16,6 +16,9 @@ Auth Application
 - flutter pub get
 - flutter run
 
+## Build Release Windows:
+- flutter build windows
+
 ## Dependencies:
  - flutter_localizations
  - intl
