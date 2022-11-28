@@ -9,7 +9,8 @@ Auth Application
 - select theme
 
 ## How it works:
-[https://drive.google.com/file/d/1Oqd5dNDcHWFnsOBi2kmJGHctp3lSrkB8/view?usp=sharing](video)
+video[https://drive.google.com/file/d/1Oqd5dNDcHWFnsOBi2kmJGHctp3lSrkB8/view?usp=sharing]
+setup[https://drive.google.com/file/d/1JFJj1jizEW2SRKQ2nX0bgCJ35KHayd04/view?usp=sharing]
 
 ## Run:
 - flutter pub get
