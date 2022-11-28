@@ -109,6 +109,8 @@ class _EnterPasswordGoogleScreenWidgetState
                 passwordTextEditingController: passwordTextController,
                 isHiddenPassword: _isHiddenPassword,
                 toggleView: togglePasswordView,
+                hintText: translation(context).password,
+                validationText: translation(context).minSixNumbers,
               ),
               const SizedBox(
                 height: 10,
@@ -120,7 +122,13 @@ class _EnterPasswordGoogleScreenWidgetState
                 onPressed: () async {
                   if (await login()) {
                     auth.signIn();
-                    User user = User(email: await authService.currentUser(), isVerifiedEmail: true, picture: '', id: '', token: '');
+                    User user = User(
+                        email: await authService.currentUser(),
+                        isVerifiedEmail: true,
+                        picture: '',
+                        id: '',
+                        token: ''
+                    );
                     userPreferences.saveUser(user);
                     _goToSignOutPage();
                   } else {
@@ -150,7 +158,11 @@ class _EnterPasswordGoogleScreenWidgetState
 }
 
 
-_showAlertDialog(BuildContext context, String message, String buttonName, String alertName) {
+_showAlertDialog(
+    BuildContext context,
+    String message,
+    String buttonName,
+    String alertName) {
   // Create button
   Widget exitButton = TextButton(
     child: Text(buttonName),

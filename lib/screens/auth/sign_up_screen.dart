@@ -97,6 +97,8 @@ class _SignUpScreenWidgetState extends State<SignUpScreenWidget> {
               ),
               EmailTextFieldWidget(
                 emailTextEditingController: emailTextController,
+                validationText: translation(context).unableValidateSignIn,
+                hintText: translation(context).email,
               ),
               const SizedBox(
                 height: 10,
@@ -105,6 +107,8 @@ class _SignUpScreenWidgetState extends State<SignUpScreenWidget> {
                 passwordTextEditingController: passwordTextController,
                 isHiddenPassword: _isHiddenPassword,
                 toggleView: togglePasswordView,
+                hintText: translation(context).password,
+                validationText: translation(context).minSixNumbers,
               ),
               const SizedBox(
                 height: 10,
@@ -142,7 +146,11 @@ class _SignUpScreenWidgetState extends State<SignUpScreenWidget> {
   }
 }
 
-_showAlertDialog(BuildContext context, String message, String buttonName, String alertName) {
+_showAlertDialog(
+    BuildContext context,
+    String message,
+    String buttonName,
+    String alertName) {
   // Create button
   Widget exitButton = TextButton(
     child: Text(buttonName),

@@ -11,6 +11,7 @@ class ThemeModel extends ChangeNotifier {
     _preferences = ThemePreferences();
     getPreferences();
   }
+
   set isDark(bool value) {
     _isDark = value;
     _preferences.setTheme(value);

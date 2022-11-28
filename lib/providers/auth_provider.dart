@@ -26,15 +26,11 @@ class AuthProvider extends ChangeNotifier {
     }
   }
 
-  Future register() async {
+  signIn() {
     _loggedInStatus = Status.signIn;
   }
 
-  Future signIn() async {
-    _loggedInStatus = Status.signIn;
-  }
-
-  Future signOut() async {
+  signOut() {
     _loggedInStatus = Status.guest;
   }
 

@@ -34,9 +34,6 @@ class _SignOutScreenWidgetState extends State<SignOutScreenWidget> {
       auth.signOut();
     }
 
-    User user = Provider
-        .of<UserProvider>(context)
-        .user;
     return Scaffold(
       appBar: AppBar(
         title: Text(translation(context).signOut),
@@ -73,7 +70,10 @@ class _SignOutScreenWidgetState extends State<SignOutScreenWidget> {
   }
 }
 
-_showAlertDialog(BuildContext context, String message, String buttonName,
+_showAlertDialog(
+    BuildContext context,
+    String message,
+    String buttonName,
     String alertName) {
   // Create button
   Widget exitButton = TextButton(

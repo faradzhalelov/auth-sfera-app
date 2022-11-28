@@ -1,13 +1,16 @@
-import 'package:dzhalelov_auth/utils/localization/language_constants.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 
 class EmailTextFieldWidget extends StatefulWidget {
   final TextEditingController emailTextEditingController;
+  final String validationText;
+  final String hintText;
 
   const EmailTextFieldWidget({
     Key? key,
-    required this.emailTextEditingController}) : super(key: key);
+    required this.emailTextEditingController,
+    required this.validationText,
+    required this.hintText}) : super(key: key);
 
   @override
   State<EmailTextFieldWidget> createState() => _EmailTextFieldWidgetState();
@@ -26,11 +29,12 @@ class _EmailTextFieldWidgetState extends State<EmailTextFieldWidget> {
         controller: widget.emailTextEditingController,
         validator: (email) =>
         email != null && !EmailValidator.validate(email)
-            ? translation(context).unableValidateSignIn
+            ? widget.validationText
             : null,
         decoration: InputDecoration(
             border: const OutlineInputBorder(),
-            hintText: translation(context).email),
+            hintText: widget.hintText,
+        ),
       ),
     );
   }

@@ -26,7 +26,13 @@ class _SignInScreenWidgetState extends State<SignInScreenWidget> {
 
   bool _isHiddenPassword = true;
 
-  User get user => User(email: emailTextController.text.trim(), isVerifiedEmail: true, picture: '', id: '', token: '');
+  User get user => User(
+      email: emailTextController.text.trim(),
+      isVerifiedEmail: true,
+      picture: '',
+      id: '',
+      token: ''
+  );
 
   @override
   void dispose() {
@@ -105,6 +111,8 @@ class _SignInScreenWidgetState extends State<SignInScreenWidget> {
               ),
               EmailTextFieldWidget(
                 emailTextEditingController: emailTextController,
+                validationText: translation(context).unableValidateSignIn,
+                hintText: translation(context).email,
               ),
               const SizedBox(
                 height: 10,
@@ -113,6 +121,8 @@ class _SignInScreenWidgetState extends State<SignInScreenWidget> {
                 passwordTextEditingController: passwordTextController,
                 isHiddenPassword: _isHiddenPassword,
                 toggleView: togglePasswordView,
+                hintText: translation(context).password,
+                validationText: translation(context).minSixNumbers,
               ),
               const SizedBox(
                 height: 10,
@@ -152,7 +162,11 @@ class _SignInScreenWidgetState extends State<SignInScreenWidget> {
 }
 
 
-_showAlertDialog(BuildContext context, String message, String buttonName, String alertName) {
+_showAlertDialog(
+    BuildContext context,
+    String message,
+    String buttonName,
+    String alertName) {
   // Create button
   Widget exitButton = TextButton(
     child: Text(buttonName),

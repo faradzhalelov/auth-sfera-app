@@ -2,7 +2,6 @@ import 'package:dzhalelov_auth/credentials/firebase/firebase_auth_credentials.da
 import 'package:dzhalelov_auth/domain/model/user_model.dart';
 import 'package:dzhalelov_auth/providers/auth_provider.dart';
 import 'package:dzhalelov_auth/providers/user_provider.dart';
-import 'package:dzhalelov_auth/screens/auth/sign_in_screen.dart';
 import 'package:dzhalelov_auth/screens/auth/sign_out_screen.dart';
 import 'package:dzhalelov_auth/screens/error/not_found_screen.dart';
 import 'package:dzhalelov_auth/screens/home/home_screen.dart';
@@ -14,7 +13,6 @@ import 'services/firebase/firebase_auth_service.dart';
 import 'services/user_preferences.dart';
 import 'utils/localization/language_constants.dart';
 import 'utils/router/custom_router.dart';
-import 'utils/router/route_constants.dart';
 import 'utils/theme/theme_model.dart';
 
 void main() {

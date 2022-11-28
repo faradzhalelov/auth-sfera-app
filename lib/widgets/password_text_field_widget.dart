@@ -1,16 +1,18 @@
-import 'package:dzhalelov_auth/utils/localization/language_constants.dart';
 import 'package:flutter/material.dart';
 
 class PasswordTextFieldWidget extends StatefulWidget {
   final TextEditingController passwordTextEditingController;
   final bool isHiddenPassword;
   final Function() toggleView;
+  final String hintText;
+  final String validationText;
 
   const PasswordTextFieldWidget(
       {Key? key,
         required this.passwordTextEditingController,
         required this.isHiddenPassword,
-        required this.toggleView})
+        required this.toggleView,
+        required this.hintText, required this.validationText,})
       : super(key: key);
 
   @override
@@ -30,12 +32,12 @@ class _PasswordTextFieldWidgetState extends State<PasswordTextFieldWidget> {
         controller: widget.passwordTextEditingController,
         validator: (password) =>
         password != null && password.length < 6
-            ? translation(context).minSixNumbers
+            ? widget.validationText
             : null,
         autovalidateMode: AutovalidateMode.onUserInteraction,
         decoration: InputDecoration(
             border: const OutlineInputBorder(),
-            hintText: translation(context).password,
+            hintText: widget.hintText,
             suffix: InkWell(
               onTap: widget.toggleView,
               child: Icon(

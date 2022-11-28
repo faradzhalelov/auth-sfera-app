@@ -31,7 +31,9 @@ class _SignInGoogleScreenWidgetState extends State<SignInGoogleScreenWidget> {
   }
 
   _goToEnterPasswordPage() {
-    Navigator.pushNamedAndRemoveUntil(context, enterPasswordGoogleRoute, (route) => false);
+    Navigator
+        .pushNamedAndRemoveUntil(context,
+        enterPasswordGoogleRoute, (route) => false);
   }
 
   SignInCallback signInWithArgs(
@@ -45,12 +47,17 @@ class _SignInGoogleScreenWidgetState extends State<SignInGoogleScreenWidget> {
         User user = User.fromJson(jsonDecode(response.body));
         SharedPreferences prefs = await SharedPreferences.getInstance();
         prefs.setString('email', user.email);
-        if (prefs.getString('email')!.isNotEmpty && prefs.getString('email')!.contains('@')) {
+        if (prefs.getString('email')!.isNotEmpty
+            && prefs.getString('email')!.contains('@')) {
           _goToEnterPasswordPage();
         }
         else {
           if(!mounted) return;
-          _showAlertDialog(context, translation(context).alert, translation(context).back, translation(context).signInGoogle);
+          _showAlertDialog(
+              context,
+              translation(context).alert,
+              translation(context).back,
+              translation(context).signInGoogle);
         }
       }
     }
@@ -97,7 +104,11 @@ class _SignInGoogleScreenWidgetState extends State<SignInGoogleScreenWidget> {
 
 }
 
-_showAlertDialog(BuildContext context, String message, String buttonName, String alertName) {
+_showAlertDialog(
+    BuildContext context,
+    String message,
+    String buttonName,
+    String alertName) {
   // Create button
   Widget exitButton = TextButton(
     child: Text(buttonName),

@@ -3,7 +3,13 @@ import 'package:flutter/cupertino.dart';
 
 class UserProvider extends ChangeNotifier{
 
-  User _user = User(email: '', isVerifiedEmail: false, picture: '', id: '', token: '');
+  User _user = User(
+      email: '',
+      isVerifiedEmail: false,
+      picture: '',
+      id: '',
+      token: ''
+  );
 
   User get user => _user;
 
@@ -11,4 +17,5 @@ class UserProvider extends ChangeNotifier{
     _user = user;
     notifyListeners();
   }
+
 }

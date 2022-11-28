@@ -100,41 +100,5 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
     );
   }
 
-  Container _drawerList() {
-    TextStyle _textStyle = const TextStyle(
-      color: Colors.white,
-      fontSize: 24,
-    );
-    return Container(
-      color: Theme.of(context).primaryColor,
-      child: ListView(
-        padding: EdgeInsets.zero,
-        children: <Widget>[
-          DrawerHeader(
-            child: Container(
-              height: 100,
-              child: const CircleAvatar(),
-            ),
-          ),
-          ListTile(
-            leading: const Icon(
-              Icons.settings,
-              size: 30,
-            ),
-            title: Text(
-              translation(context).settings,
-              style: _textStyle,
-            ),
-            onTap: () {
-              // To close the Drawer
-              Navigator.pop(context);
-              // Navigating to About Page
-              Navigator.pushNamed(context, settingsRoute);
-            },
-          ),
-        ],
-      ),
-    );
-  }
 }
 

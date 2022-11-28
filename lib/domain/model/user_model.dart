@@ -1,5 +1,3 @@
-import 'dart:math';
-
 class User {
   String id;
   String email;
@@ -29,11 +27,16 @@ class User {
     'email': email,
     'verified_email': isVerifiedEmail,
     'picture' : picture,
+    'token' : token,
   };
 
   @override
   String toString() {
-    return "(User: id: $id; email: $email; isVerifiedEmail: $isVerifiedEmail; picture: $picture; token: $token)";
+    return "(User: id: $id; "
+        "email: $email; "
+        "isVerifiedEmail: $isVerifiedEmail; "
+        "picture: $picture; "
+        "token: $token)";
   }
 
 }

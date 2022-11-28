@@ -12,4 +12,5 @@ class Language {
       Language(3, 'ES', 'es'),
     ];
   }
+
 }
