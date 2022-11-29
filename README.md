@@ -30,4 +30,4 @@ Auth Application
  - http: ^0.13.5
 
 ## ToDo:
-- tests
+- Add more tests
