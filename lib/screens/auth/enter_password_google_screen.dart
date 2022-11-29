@@ -79,6 +79,13 @@ class _EnterPasswordGoogleScreenWidgetState
     return Scaffold(
       appBar: AppBar(
         title: Text(translation(context).signIn),
+        actions: [
+          IconButton(
+              icon: const Icon(Icons.exit_to_app),
+              onPressed: () {
+                _goToHomePage();
+              }),
+        ],
       ),
       drawer: const Drawer(
         child: DrawListWidget(),

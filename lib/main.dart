@@ -97,7 +97,7 @@ class _AppState extends State<App> {
     return themeNotifier.isDark
         ? ThemeData(
         brightness: Brightness.dark,
-        primaryColor: Colors.blueGrey,
+        primaryColor: Colors.black12 ,
         primarySwatch: Colors.blueGrey
     )
         : ThemeData(

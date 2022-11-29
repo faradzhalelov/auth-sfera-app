@@ -72,6 +72,13 @@ class _SignUpScreenWidgetState extends State<SignUpScreenWidget> {
     return Scaffold(
       appBar: AppBar(
         title: Text(translation(context).signUp),
+        actions: [
+          IconButton(
+              icon: const Icon(Icons.exit_to_app),
+              onPressed: () {
+                _goToHomePage();
+              }),
+        ],
       ),
       drawer: const Drawer(
         child: DrawListWidget(),
@@ -133,10 +140,6 @@ class _SignUpScreenWidgetState extends State<SignUpScreenWidget> {
               ),
               const SizedBox(
                 height: 10,
-              ),
-              CustomButtonWidget(
-                onPressed: _goToHomePage,
-                text: translation(context).homePage,
               ),
             ],
           ),

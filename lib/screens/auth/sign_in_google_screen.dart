@@ -69,6 +69,13 @@ class _SignInGoogleScreenWidgetState extends State<SignInGoogleScreenWidget> {
     return Scaffold(
       appBar: AppBar(
         title: Text(translation(context).signInGoogle),
+        actions: [
+          IconButton(
+              icon: const Icon(Icons.exit_to_app),
+              onPressed: () {
+                _goToHomePage();
+              }),
+        ],
       ),
       drawer: const Drawer(
         child: DrawListWidget(),
@@ -91,10 +98,6 @@ class _SignInGoogleScreenWidgetState extends State<SignInGoogleScreenWidget> {
             ),
             const SizedBox(
               height: 10,
-            ),
-            CustomButtonWidget(
-              onPressed: _goToHomePage,
-              text: translation(context).homePage,
             ),
           ],
         ),

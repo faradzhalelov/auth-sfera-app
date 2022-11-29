@@ -1,6 +1,7 @@
 import 'package:dzhalelov_auth/main.dart';
 import 'package:dzhalelov_auth/utils/localization/language.dart';
 import 'package:dzhalelov_auth/utils/localization/language_constants.dart';
+import 'package:dzhalelov_auth/utils/router/route_constants.dart';
 import 'package:dzhalelov_auth/utils/theme/theme_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -13,13 +14,24 @@ class SettingsScreenWidget extends StatefulWidget {
 }
 
 class _SettingsScreenWidgetState extends State<SettingsScreenWidget> {
+
+  _goToHomePage() {
+    Navigator.pushNamedAndRemoveUntil(context, homeRoute, (route) => false);
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Consumer<ThemeModel>(
-      builder: (context, ThemeModel themeNotifier, child) {
+    ThemeModel themeModel = Provider.of<ThemeModel>(context);
         return Scaffold(
           appBar: AppBar(
             title: Text(translation(context).settings),
+            actions: [
+              IconButton(
+                  icon: const Icon(Icons.exit_to_app),
+                  onPressed: () {
+                    _goToHomePage();
+                  }),
+            ],
           ),
           body: Center(
             child: Column(
@@ -57,27 +69,25 @@ class _SettingsScreenWidgetState extends State<SettingsScreenWidget> {
                 const Expanded(flex: 1, child: SizedBox(height: 10,)),
                 Flexible(
                     flex: 1,
-                    child: themeNotifier.isDark
+                    child: themeModel.isDark
                         ? Text(translation(context).darkTheme)
                         : Text(translation(context).lightTheme)
                 ),
                 Flexible(
                   flex: 1,
                   child: IconButton(
-                      icon: Icon(themeNotifier.isDark
+                      icon: Icon(themeModel.isDark
                           ? Icons.nightlight_round
                           : Icons.wb_sunny),
                       onPressed: () {
-                        themeNotifier.isDark
-                            ? themeNotifier.isDark = false
-                            : themeNotifier.isDark = true;
+                        themeModel.isDark
+                            ? themeModel.isDark = false
+                            : themeModel.isDark = true;
                       }),
                 ),
               ],
             ),
           ),
         );
-      },
-    );
   }
 }
